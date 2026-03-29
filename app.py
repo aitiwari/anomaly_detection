@@ -498,7 +498,7 @@ def create_business_takeaway(df):
 
     return (
         f"Business takeaway\n\n"
-        f"This dashboard analyses NHS 111 service level activity and highlights unusual operational patterns.\n"
+        f"This dashboard analyses NHS service level activity and highlights unusual operational patterns.\n"
         f"The processed dataset contains {len(df)} records and the model flagged {total_anomalies} predicted anomalies.\n\n"
         f"Average answer rate is {avg_answer_rate:.2%} and average abandon rate is {avg_abandon_rate:.2%}.\n\n"
         f"Use the monthly charts to understand spikes in demand and possible drops in service performance.\n"
@@ -602,12 +602,14 @@ CUSTOM_CSS = """
 }
 """
 
-with gr.Blocks(css=CUSTOM_CSS, title="NHS 111 Anomaly Detection Dashboard") as demo:
+with gr.Blocks(css=CUSTOM_CSS, title="Anomaly Detection Dashboard") as demo:
     gr.Markdown(
         """
-# NHS 111 Anomaly Detection Dashboard
+# Anomaly Detection Dashboard
 
-This app is designed for the NHS 111 2021 time series Excel file.
+This app uses the sample dataset 20210708-NHS-111-MDS-time-series-to-March-2021.xlsx.
+Download the Open NHS dataset from:
+https://www.england.nhs.uk/statistics/statistical-work-areas/iucadc-new-from-april-2021/nhs-111-minimum-data-set/nhs-111-minimum-data-set-2020-21/
 
 It can:
 - load the default NHS Excel file from your repo or folder
